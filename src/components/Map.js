@@ -17,7 +17,6 @@ const Map = ({ eventData, center, zoom }) => {
           onClick={() =>
             setVolcanoInfo({
               title: ev.title,
-              date: ev.geometries[0].date,
               url: ev.sources[0].url
             })
           }

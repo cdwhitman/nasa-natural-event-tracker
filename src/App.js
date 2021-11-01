@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import Map from './components/Map';
 import Loader from './components/Loader';
+import Header from './components/Header';
 
 function App() {
   const [eventData, setEventData] = useState([]);
@@ -20,10 +21,15 @@ function App() {
 
     fetchEvents();
 
-    console.log(eventData);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <div>{!loading ? <Map eventData={eventData} /> : <Loader />}</div>;
+  return (
+    <Fragment>
+      <Header />
+      <div>{!loading ? <Map eventData={eventData} /> : <Loader />}</div>;
+    </Fragment>
+  );
 }
 
 export default App;
