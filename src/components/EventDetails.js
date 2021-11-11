@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './VolcanoDetails.module.css';
+import styles from './EventDetails.module.css';
 
-const VolcanoDetails = ({ info }) => {
+const EventDetails = ({ info }) => {
   return (
     <div className={styles.details}>
       <h2>{info.title}</h2>
@@ -12,4 +12,4 @@ const VolcanoDetails = ({ info }) => {
   );
 };
 
-export default VolcanoDetails;
+export default EventDetails;

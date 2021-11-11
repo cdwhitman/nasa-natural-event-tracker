@@ -1,21 +1,69 @@
 import { useState } from 'react';
 import GoogleMapReact from 'google-map-react';
-import LocationMarker from './LocationMarker';
-import VolcanoDetails from './VolcanoDetails';
+import VolcanoMarker from './VolcanoMarker';
+import WildfireMarker from './WildfireMarker';
+import IceMarker from './IceMarker';
+import StormMarker from './StormMarker';
+import EventDetails from './EventDetails';
 import styles from './Map.module.css';
 
 const Map = ({ eventData, center, zoom }) => {
-  const [volcanoInfo, setVolcanoInfo] = useState(null);
+  const [info, setInfo] = useState(null);
 
-  const volcanos = eventData.map((ev) => {
+  const naturalEvents = eventData.map((ev) => {
     if (ev.categories[0].id === 12) {
       return (
-        <LocationMarker
+        <VolcanoMarker
           key={ev.id}
           lat={ev.geometries[0].coordinates[1]}
           lng={ev.geometries[0].coordinates[0]}
           onClick={() =>
-            setVolcanoInfo({
+            setInfo({
+              title: ev.title,
+              url: ev.sources[0].url
+            })
+          }
+        />
+      );
+    }
+    if (ev.categories[0].id === 8) {
+      return (
+        <WildfireMarker
+          key={ev.id}
+          lat={ev.geometries[0].coordinates[1]}
+          lng={ev.geometries[0].coordinates[0]}
+          onClick={() =>
+            setInfo({
+              title: ev.title,
+              url: ev.sources[0].url
+            })
+          }
+        />
+      );
+    }
+    if (ev.categories[0].id === 15) {
+      return (
+        <IceMarker
+          key={ev.id}
+          lat={ev.geometries[0].coordinates[1]}
+          lng={ev.geometries[0].coordinates[0]}
+          onClick={() =>
+            setInfo({
+              title: ev.title,
+              url: ev.sources[0].url
+            })
+          }
+        />
+      );
+    }
+    if (ev.categories[0].id === 10) {
+      return (
+        <StormMarker
+          key={ev.id}
+          lat={ev.geometries[0].coordinates[1]}
+          lng={ev.geometries[0].coordinates[0]}
+          onClick={() =>
+            setInfo({
               title: ev.title,
               url: ev.sources[0].url
             })
@@ -34,9 +82,9 @@ const Map = ({ eventData, center, zoom }) => {
         }}
         defaultCenter={center}
         defaultZoom={zoom}>
-        {volcanos}
+        {naturalEvents}
       </GoogleMapReact>
-      {volcanoInfo && <VolcanoDetails info={volcanoInfo} />}
+      {info && <EventDetails info={info} />}
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import './Header.module.css';
 const Header = () => {
-  return <header>NASA Volcano Locator</header>;
+  return <header>NASA Powered Natural Event Tracker</header>;
 };
 
 export default Header;

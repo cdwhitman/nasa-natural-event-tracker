@@ -37,6 +37,10 @@
     ]
   },
   "devDependencies": {
+    "@iconify/icons-emojione-v1": "^1.1.0",
+    "@iconify/icons-fxemoji": "^1.1.0",
+    "@iconify/icons-noto": "^1.1.4",
+    "@iconify/icons-openmoji": "^1.1.19",
     "@iconify/icons-twemoji": "^1.1.2",
     "@iconify/react": "^3.0.1"
   }
