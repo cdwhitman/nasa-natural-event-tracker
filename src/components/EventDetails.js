@@ -2,12 +2,23 @@ import React from 'react';
 import styles from './EventDetails.module.css';
 
 const EventDetails = ({ info }) => {
+  console.log(info.url);
+  console.log(info.urls);
+
   return (
     <div className={styles.details}>
       <h2>{info.title}</h2>
-      <a href={info.url} target='blank'>
-        More Information
-      </a>
+      <p>More Information:</p>
+      <div>
+        <a href={info.url} target='blank' className={styles.links}>
+          {info.url}
+        </a>
+        {info.urls !== undefined && info.urls !== info.url && (
+          <a href={info.urls} target='blank' className={styles.links}>
+            {info.urls}
+          </a>
+        )}
+      </div>
     </div>
   );
 };

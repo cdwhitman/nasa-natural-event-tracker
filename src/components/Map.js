@@ -21,6 +21,7 @@ const Map = ({ eventData, center, zoom }) => {
             setInfo({
               title: ev.title,
               url: ev.sources[0].url
+              // urls: ev.sources[0].url[1]
             })
           }
         />
@@ -36,6 +37,7 @@ const Map = ({ eventData, center, zoom }) => {
             setInfo({
               title: ev.title,
               url: ev.sources[0].url
+              // urls: ev.sources[1].url
             })
           }
         />
@@ -51,6 +53,7 @@ const Map = ({ eventData, center, zoom }) => {
             setInfo({
               title: ev.title,
               url: ev.sources[0].url
+              // urls: ev.sources[1].url
             })
           }
         />
@@ -65,7 +68,8 @@ const Map = ({ eventData, center, zoom }) => {
           onClick={() =>
             setInfo({
               title: ev.title,
-              url: ev.sources[0].url
+              url: ev.sources[1].url
+              // urls: ev.sources[1].url
             })
           }
         />
