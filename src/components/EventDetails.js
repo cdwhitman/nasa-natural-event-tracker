@@ -2,8 +2,6 @@ import React from 'react';
 import styles from './EventDetails.module.css';
 
 const EventDetails = ({ info }) => {
-  console.log(info.url);
-  console.log(info.urls);
 
   return (
     <div className={styles.details}>

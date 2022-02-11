@@ -9,7 +9,6 @@ import styles from './Map.module.css';
 
 const Map = ({ eventData, center, zoom }) => {
   const [info, setInfo] = useState(null);
-
   const naturalEvents = eventData.map((ev) => {
     if (ev.categories[0].id === 12) {
       return (
