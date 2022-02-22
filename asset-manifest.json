@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/nasa-natural-event-tracker/static/css/main.dd42e08c.chunk.css",
+    "main.js": "/nasa-natural-event-tracker/static/js/main.abba3b1b.chunk.js",
+    "main.js.map": "/nasa-natural-event-tracker/static/js/main.abba3b1b.chunk.js.map",
+    "runtime-main.js": "/nasa-natural-event-tracker/static/js/runtime-main.eacd78ca.js",
+    "runtime-main.js.map": "/nasa-natural-event-tracker/static/js/runtime-main.eacd78ca.js.map",
+    "static/js/2.6dadc3a9.chunk.js": "/nasa-natural-event-tracker/static/js/2.6dadc3a9.chunk.js",
+    "static/js/2.6dadc3a9.chunk.js.map": "/nasa-natural-event-tracker/static/js/2.6dadc3a9.chunk.js.map",
+    "index.html": "/nasa-natural-event-tracker/index.html",
+    "static/css/main.dd42e08c.chunk.css.map": "/nasa-natural-event-tracker/static/css/main.dd42e08c.chunk.css.map",
+    "static/js/2.6dadc3a9.chunk.js.LICENSE.txt": "/nasa-natural-event-tracker/static/js/2.6dadc3a9.chunk.js.LICENSE.txt",
+    "static/media/loading.8760a8a1.gif": "/nasa-natural-event-tracker/static/media/loading.8760a8a1.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eacd78ca.js",
+    "static/js/2.6dadc3a9.chunk.js",
+    "static/css/main.dd42e08c.chunk.css",
+    "static/js/main.abba3b1b.chunk.js"
+  ]
+}
