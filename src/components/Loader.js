@@ -1,4 +1,4 @@
-import loading from './loading.gif';
+import loading from '../assets/loading.gif';
 import styles from './Loader.module.css';
 
 const Loader = () => {

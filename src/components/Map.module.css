@@ -1,5 +1,9 @@
+
+
 .map {
-  width: 100vw;
-  height: 100vh;
+  text-align: center;
+  height: 80vh;
+  max-width: 2000px;
+  margin: 10%;
   position: relative;
 }
