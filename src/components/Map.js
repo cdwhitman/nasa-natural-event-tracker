@@ -2,6 +2,11 @@ import { useState } from 'react';
 import GoogleMapReact from 'google-map-react';
 import EventMarker from './EventMarker';
 import EventDetails from './EventDetails';
+import { Icon } from '@iconify/react';
+import volcanoIcon from '@iconify/icons-twemoji/volcano';
+import fireIcon from '@iconify/icons-emojione-v1/fire';
+import floatingIce from '@iconify/icons-openmoji/floating-ice';
+import stormcloudIcon from '@iconify/icons-fxemoji/stormcloud';
 import styles from './Map.module.css';
 
 const Map = ({ eventData, center, zoom }) => {
@@ -33,13 +38,14 @@ const Map = ({ eventData, center, zoom }) => {
     })
 
   return (
-    <div>
-      <div>
-        <button type='button' onClick={() => setFire(!fire)}>fire</button>
-        <button type='button' onClick={() => setVolcano(!volcano)}>Volcano</button>
-        <button type='button' onClick={() => setIce(!ice)}>Ice</button>
-        <button type='button' onClick={() => setStorm(!storm)}>Storm</button>
+    <div className={styles.container}>
+      <div className={styles.filter}>
+        <button type='button' className={styles.toggle} onClick={() => setFire(!fire)}><Icon icon={fireIcon} /> Wildfires</button>
+        <button type='button' className={styles.toggle} onClick={() => setVolcano(!volcano)}> <Icon icon={volcanoIcon} />Volcanos</button>
+        <button type='button' className={styles.toggle} onClick={() => setIce(!ice)}> <Icon icon={floatingIce} />Icebergs</button>
+        <button type='button' className={styles.toggle} onClick={() => setStorm(!storm)}> <Icon icon={stormcloudIcon} />Tripical Storms</button>
       </div>
+    <div className="grid">
     <div className={styles.map}>
       <GoogleMapReact
         bootstrapURLKeys={{
@@ -49,9 +55,13 @@ const Map = ({ eventData, center, zoom }) => {
         defaultZoom={zoom}>
         {naturalEvents}
       </GoogleMapReact>
+      </div>
+      <div className={styles.details}>
       {info && <EventDetails info={info} />}
-    </div>
-    </div>
+      </div>
+      </div>
+      </div>
+    
   );
 };
 
