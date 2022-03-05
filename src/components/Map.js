@@ -40,13 +40,13 @@ const Map = ({ eventData, center, zoom }) => {
   return (
     <div className={styles.container}>
       <div className={styles.filter}>
-        <button type='button' className={styles.toggle} onClick={() => setFire(!fire)}><Icon icon={fireIcon} /> Wildfires</button>
-        <button type='button' className={styles.toggle} onClick={() => setVolcano(!volcano)}> <Icon icon={volcanoIcon} />Volcanos</button>
-        <button type='button' className={styles.toggle} onClick={() => setIce(!ice)}> <Icon icon={floatingIce} />Icebergs</button>
-        <button type='button' className={styles.toggle} onClick={() => setStorm(!storm)}> <Icon icon={stormcloudIcon} />Tripical Storms</button>
+        <button type='button' className={styles.toggle} onClick={() => setFire(!fire)}><Icon className={styles.icon} icon={fireIcon} /> Wildfires</button>
+        <button type='button' className={styles.toggle} onClick={() => setVolcano(!volcano)}> <Icon className={styles.icon} icon={volcanoIcon} />Volcanos</button>
+        <button type='button' className={styles.toggle} onClick={() => setIce(!ice)}> <Icon className={styles.icon} icon={floatingIce} />Icebergs</button>
+        <button type='button' className={styles.toggle} onClick={() => setStorm(!storm)}> <Icon className={styles.icon} icon={stormcloudIcon} />Tropical Storms</button>
       </div>
-    <div className="grid">
     <div className={styles.map}>
+      {info && <EventDetails info={info} />}
       <GoogleMapReact
         bootstrapURLKeys={{
           key: process.env.REACT_APP_MAP_API_KEY
@@ -54,11 +54,8 @@ const Map = ({ eventData, center, zoom }) => {
         defaultCenter={center}
         defaultZoom={zoom}>
         {naturalEvents}
+     
       </GoogleMapReact>
-      </div>
-      <div className={styles.details}>
-      {info && <EventDetails info={info} />}
-      </div>
       </div>
       </div>
     

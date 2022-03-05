@@ -9,16 +9,18 @@
 .toggle {
   padding: 5px;
   margin: 1rem;
+  border-radius: 5px;
+  color: white;
+  padding: 5px;
+  background-color: rgb(3, 70, 3);
+}
 
+.icon {
+ padding-right: 5px;
 }
-.grid {
-  display: grid;
-  grid-template-columns: 3fr, 1fr;
-  gap: 1rem;
-}
+
 
 .map {
-  grid-column: 1/2;
   text-align: center;
   height: 70vh;
   max-width: 2000px;
@@ -27,6 +29,15 @@
   /* position: relative; */
 }
 
-.details {
-  grid-column: 2/2;
+/* .details {
+  position: absolute;
+  top: 5px;
+  right: 50%;
+} */
+
+@media only screen and (max-width: 800px) {
+  .container {
+    margin: .5rem;
+  }
+  
 }

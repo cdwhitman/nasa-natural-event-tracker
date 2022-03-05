@@ -3,6 +3,10 @@
 }
 
 .details {
+  /* position: fixed;
+  bottom: 50px; */
+  /* right: 0; */
+  /* margin: auto; */
   padding: 30px;
   background-color: rgba(0, 0, 0, 0.75);
   border-radius: 10px;
