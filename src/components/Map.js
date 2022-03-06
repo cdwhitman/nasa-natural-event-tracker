@@ -15,6 +15,11 @@ const Map = ({ eventData, center, zoom }) => {
   const [volcano, setVolcano] = useState(true)
   const [storm, setStorm] = useState(true)
   const [ice, setIce] = useState(true)
+
+  const close = () => {
+    setInfo(null)
+  }
+
   const naturalEvents = eventData.map((ev) => {
       return (
         <EventMarker
@@ -46,7 +51,7 @@ const Map = ({ eventData, center, zoom }) => {
         <button type='button' className={styles.toggle} onClick={() => setStorm(!storm)}> <Icon className={styles.icon} icon={stormcloudIcon} />Tropical Storms</button>
       </div>
     <div className={styles.map}>
-      {info && <EventDetails info={info} />}
+      {info && <EventDetails close={close} info={info} />}
       <GoogleMapReact
         bootstrapURLKeys={{
           key: process.env.REACT_APP_MAP_API_KEY
